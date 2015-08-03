@@ -1,3 +1,12 @@
 section, header, article, nav{
 	display: block;
 }
+
+* {
+	padding: 0;
+	margin:0;
+}
+
+body{
+	margin :1em 10%;
+}
