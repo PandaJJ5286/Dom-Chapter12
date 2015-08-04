@@ -43,6 +43,8 @@ function highlightPage(){
 	var navs = document.getElementsByTagName('nav');
 	if(navs.length == 0) return false;
 	var links = document.getElementsByTagName('a');
+	var linkurl;  /*原本自己在for循环中定义，看了源码应将变量在for循环外定义，这是为什么呢？*//*暂时想到的原因是重复定义会造成效率降低*/
+	for(var i = 0; i < links.length; i++){
 		linkurl = links[i].getAttribute('href');
 		if(window.location.href.indexOf(linkurl) != -1){
 			addClass(links[i],'here');
