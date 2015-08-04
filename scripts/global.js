@@ -34,3 +34,22 @@ function addClass(element, value){
 		element.className = newClassName;
 	}
 }
+
+//  highlightPage()函数，页面突出显示
+
+function highlightPage(){
+	var headers = document.getElementsByTagName('header');
+	if(headers.length == 0) return false;
+	var navs = document.getElementsByTagName('nav');
+	if(navs.length == 0) return false;
+	var links = document.getElementsByTagName('a');
+		linkurl = links[i].getAttribute('href');
+		if(window.location.href.indexOf(linkurl) != -1){
+			addClass(links[i],'here');
+			// 下面两行代码的语法不熟，nodeValue用来取得标签文本。设置属性记得用setAttribute()方法；
+			var linkText = links[i].lastChild.nodeValue.toLowerCase();
+			document.body.setAttribute("id",linkText);
+		}
+	}
+}
+addLoadEvent(highlightPage);
