@@ -120,6 +120,12 @@ function prepareSlideshow(){
 	var slideshow = document.createElement("div");
 	slideshow.setAttribute("id","slideshow");
 	
+	var frame = document.createElement("img");
+	frame.setAttribute("src","images/frame.gif");
+	frame.setAttribute("alt","");
+	frame.setAttribute("id","frame");
+	slideshow.appendChild(frame);
+
 	var preview = document.createElement("img");
 	preview.setAttribute("id","preview");
 	preview.setAttribute("src","images/slideshow.gif");
@@ -127,8 +133,9 @@ function prepareSlideshow(){
 
 	slideshow.appendChild(preview);
 	insertAfter(slideshow,intro);
-
-	var links = intro.getElementsByTagName('a');
+	
+	var links = document.getElementsByTagName('a');  //全页面a标签触发幻灯片切换功能
+	// var links = intro.getElementsByTagName('a');  //“intro” 段落中的链接触发幻灯片功能
 	var destination;
 	for (var i=0;i<links.length;i++){
 		links[i].onmouseover = function(){
@@ -153,3 +160,4 @@ function prepareSlideshow(){
 }
 
 addLoadEvent(prepareSlideshow);
+
