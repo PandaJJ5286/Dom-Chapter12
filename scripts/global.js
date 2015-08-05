@@ -2,7 +2,7 @@
 
 function addLoadEvent(func){
 	var oldonload = window.onload;
-	if(typeof oldonload != function){
+	if(typeof oldonload != 'function'){
 		window.onload = func;
 	} else{
 		oldonload();
